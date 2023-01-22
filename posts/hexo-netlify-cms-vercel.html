@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok | IT迷</title><meta name="author" content="精灵猫"><meta name="copyright" content="精灵猫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="529b96f9ce9620575e93a9688fe1fd836c7a84086c1d169ea14f904cc2930507040b900a2010658a30590798e4ee33325f7218c15cfa687c897033ed76273bc16d5cd490cca6a816671"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://163168.xyz/posts/hexo-netlify-cms-vercel"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-01 04:33:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">70</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">IT迷</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-30T20:33:43.000Z" title="发表于 2022-12-01 04:33:43">2022-12-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-30T20:33:43.000Z" title="更新于 2022-12-01 04:33:43">2022-12-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%AB%99/">网站</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%AB%99/%E5%8D%9A%E5%AE%A2/">博客</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%AB%99/%E5%8D%9A%E5%AE%A2/hexo/">hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="b61d51813e4c87dfb8fd3e168bab94d044937e0118fa24f67266a0576b7fc8a4">529b96f9ce9620575e93a9688fe1fd836c7a84086c1d169ea14f904cc2930507040b900a2010658a30590798e4ee33325f7218c15cfa687c897033ed76273bc16d5cd490cca6a8166714b4831853bef6bd66e89957de865ff881216c6398fbdac7f18b4176bf800ae8b20bd5a702d34e1035b6a7ab1aa54e1720566140456d198ad6eefe841d67f036d2822ac0a9dd61a3d3ef703ac59443a1d25426f28a383311df41698bb0461f6ed0c98f6949b413cc0e90523766005ad723ca0de4d4c93ea38a880d606288923f36406059d226e889a4742117f4bbe349772352b718eabeac5e9cc2bf81a73ff73e342b10952e26340d9dfc22db0beb892894dd97ade064c98f1714decaacc45e20c7b387fa95f9ba5c5ea9c87108851a01592c6738f447855544af9087aaf74d7bb77c624d6aabc7f5e811d38b90f1a6c67bf946ed65539b7b0a11f4a301da31d1fdbf96a619717270a28036ef7f18ba20bd6cf8a058cb7fc85d3ba2c00da2ab86dc63b069dfae03366367c09fc24c1c4343cd68187d7d291ff5778fcfbc1cee530bd5ed0d001408c73f4cfc70a83a82c3906f26586625bdb0e4f3f6e92f94ff642410f9ddc6e5eea0a793cfdb9529f1db91629b4d132f0ff98e0824ee27f000d4a5ddf0ae4e90e00d2577b6d290493e84b2141c6fa756a0ebb8ff64c1e86c67214c6aa62a5b92316259920cddea5da39919435eaf3f07d6fea2751cad3d198e968ee9be2101825ed3254d105b8a50c6438759d8b3353ff4b6f9249a464f57bb377266282329dfc49312b282a6297df33f64f407205aaa06afed30aabb73e152458d68a7526c3bd0eb6170e573789988f46d41954cdb629d72d2829cb7c89faa78a8e200448f7c2170cba76826bfdee0e004b34768db2fd1fc9bc07e0342c2a4fa06488e8fbae9643da30b83b9a9b4b293c72e7e6ec78350b2e7460c46bdc8fc1c2066e987f3d19d1c04e355b11fa8456d265f0df9330f9cb0e032425440371ffee40a3b955f3068c828678294b7b03e79b6ab249bc05dd460343068289f9c810789c4b76da148d7b5390a3ec6923150159e2dd570c8d2b62a5d0a194ad9141f159856d0c7992229cc7df5fccb71e73d4eca8f76cabc633f668cb36a159e75ce87fda3022b987981ccba66f8abdbf5808310352d75d98cdbfe2eae8739d083f6108ba27587f12941ccf367c1214f946521522e215c928e62bed9757e6a8a668791296446f87a870d8282cb7f6d607b46bcabad47ff2df2e98fc8725c54ff33b36d7b3517de92e66c0bc8a32667cc5dac1c95eff346434fecacbff0a06a6ff72208724c2ce561bb0a5a533d9ea908f00136c7767c4b2cb379af36813c7fdd74442ab39ca462842ccf6e0fcb569969a000481b39ba7ed2544b097e293eb1581820a10d9f23a598abc798708054ee91ace1c0edda5d64537aeaeebb4e3ebeb7084c6123bfd38f6572b75295cfdf134539cc1a8219a4db4867ade4bdfff6ba260c9abc6dfde4f7ddc5af5881ed0ebfea2837f2968402c45426bd796a1166555f1d1ff84eef26a607df40b3ced4ede48d0e6a90c734095dd2304addd9e435ca2ab10656fa7594784bb404fc02c8eeb7108d43546a7a9eb82bf9dd3e62da874a0837344d601cff4cbafc3e451b32ce913e396b28196293fcb2eedc346bd418f68677ea287570146b0fa5068f6815defc08886a1c91accf0adeaf94d7ac1a0893e523872b3286314415d5ea2ecd2e4635d4f75fad9b9c0906075b75482ea54b8c60b484d04b8f64a50b345ac876bc09c07c94031fe612f4a90c1a538d9b17e5d0c602d562b56a25825fa299c7634787f5780e45667bf393405b5a40d9d89ee42a70efc97c77d8e6f72b6db96eb2a998dc15f39d5644c20da3de8db5a8d165560fb84836713fd159e4cd2f90bd0679020857b453c221a366f91e1684a89d49318dc3d94de1780f298d048f</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请联系博主微信:jiuhao998 获取密码！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://163168.xyz">精灵猫</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://163168.xyz/posts/hexo-netlify-cms-vercel.html">http://163168.xyz/posts/hexo-netlify-cms-vercel.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://163168.xyz" target="_blank">IT迷</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%AB%99/">网站</a><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="post-meta__tags" href="/tags/vip/">vip</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0qmx9d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/hexo-blog-encrypt.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-4g7q1q.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">对hexo博客文章进行加密的插件 hexo-blog-encrypt</div></div></a></div><div class="next-post pull-right"><a href="/posts/post.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0j3grm.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo文章头部设置</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/1.html" title="hexo安装后的使用教程"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0qy7lq.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-09</div><div class="title">hexo安装后的使用教程</div></div></a></div><div><a href="/posts/2.html" title="github搭建hexo博客和绑定域名的详细过程"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-4de2r3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-09</div><div class="title">github搭建hexo博客和绑定域名的详细过程</div></div></a></div><div><a href="/posts/4.html" title="hexo博客优化之文章置顶+置顶标签"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0j3grm.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-12</div><div class="title">hexo博客优化之文章置顶+置顶标签</div></div></a></div><div><a href="/posts/hexo-blog-encrypt.html" title="对hexo博客文章进行加密的插件 hexo-blog-encrypt"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-4g7q1q.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-01</div><div class="title">对hexo博客文章进行加密的插件 hexo-blog-encrypt</div></div></a></div><div><a href="/posts/5.html" title="Github 绑定域名添加https的方法2019年9月更新"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-2km72y.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-14</div><div class="title">Github 绑定域名添加https的方法2019年9月更新</div></div></a></div><div><a href="/posts/3.html" title="hexo博客备份迁移教程"><img class="cover" src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0wk2ox.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-11</div><div class="title">hexo博客备份迁移教程</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">精灵猫</div><div class="author-info__description">这是一个hexo.hugo,github,搭建静态博客的教程</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">70</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/hexo-blog-encrypt.html" title="对hexo博客文章进行加密的插件 hexo-blog-encrypt"><img src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-4g7q1q.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="对hexo博客文章进行加密的插件 hexo-blog-encrypt"/></a><div class="content"><a class="title" href="/posts/hexo-blog-encrypt.html" title="对hexo博客文章进行加密的插件 hexo-blog-encrypt">对hexo博客文章进行加密的插件 hexo-blog-encrypt</a><time datetime="2022-11-30T22:33:30.000Z" title="发表于 2022-12-01 06:33:30">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/hexo-netlify-cms-vercel.html" title="通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok"><img src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0qmx9d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok"/></a><div class="content"><a class="title" href="/posts/hexo-netlify-cms-vercel.html" title="通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok">通过hexo-netlify-cms-vercel快速搭建和升级自己的hexobok</a><time datetime="2022-11-30T20:33:43.000Z" title="发表于 2022-12-01 04:33:43">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/post.html" title="hexo文章头部设置"><img src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0j3grm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo文章头部设置"/></a><div class="content"><a class="title" href="/posts/post.html" title="hexo文章头部设置">hexo文章头部设置</a><time datetime="2022-05-03T08:19:27.000Z" title="发表于 2022-05-03 16:19:27">2022-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/32242.html" title="这是用qexo发布的一篇文章"><img src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0w1drq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="这是用qexo发布的一篇文章"/></a><div class="content"><a class="title" href="/posts/32242.html" title="这是用qexo发布的一篇文章">这是用qexo发布的一篇文章</a><time datetime="2022-05-03T00:49:15.000Z" title="发表于 2022-05-03 08:49:15">2022-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/31.html" title="Hugo利用Github Actions实现自动化部署博客"><img src="https://cdn.jsdelivr.net/gh/waimao365/logo/logo/wallhaven-0w1drq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hugo利用Github Actions实现自动化部署博客"/></a><div class="content"><a class="title" href="/posts/31.html" title="Hugo利用Github Actions实现自动化部署博客">Hugo利用Github Actions实现自动化部署博客</a><time datetime="2021-08-23T00:18:30.000Z" title="发表于 2021-08-23 08:18:30">2021-08-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 精灵猫</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
